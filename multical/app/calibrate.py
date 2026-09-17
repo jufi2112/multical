@@ -25,7 +25,7 @@ def calibrate(args):
   np.set_printoptions(precision=4, suppress=True)
 
   # Use image path if not explicity specified
-  output_path = args.paths.image_path or args.paths.output_path 
+  output_path = args.paths.output_path or args.paths.image_path
 
   ws = workspace.Workspace(output_path, args.paths.name)
   setup_logging(args.runtime.log_level, [ws.log_handler], log_file=path.join(output_path, f"{args.paths.name}.txt"))
