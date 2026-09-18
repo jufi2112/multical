@@ -13,7 +13,7 @@ from structs.struct import transpose_structs, struct, filter_none
 def load_image(filename):
   assert path.isfile(filename), f"load_image: file {filename} does not exist"
 
-  image = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)
+  image = cv2.imread(filename, cv2.IMREAD_GRAYSCALE | cv2.IMREAD_IGNORE_ORIENTATION)
   assert image is not None, f"load_image: could not read {filename}"
   return image
 
